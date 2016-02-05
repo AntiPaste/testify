@@ -18,7 +18,7 @@ VOLUME  ["/var/log/nginx"]
 
 COPY    ./app/ /app
 COPY    ./nginx/ /etc/nginx/
-COPY		./supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY		./supervisor/supervisord.conf /etc/supervisord.conf
 
 RUN			chown -R nginx:nginx /app /etc/nginx
 
