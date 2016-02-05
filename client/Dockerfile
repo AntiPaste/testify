@@ -2,7 +2,7 @@ FROM    alpine:3.2
 
 ADD			https://releases.hashicorp.com/consul-template/0.12.2/consul-template_0.12.2_linux_amd64.zip /tmp/consul-template.zip
 
-RUN     apk add --update nginx-lua unzip && \
+RUN     apk add --update nginx unzip && \
 	      rm -rf /var/cache/apk/* && \
         mkdir -p /tmp/nginx/client-body && \
         mkdir -p /var/lib/nginx/tmp/proxy/ && \
@@ -22,4 +22,4 @@ COPY    ./nginx/ /etc/nginx/
 RUN			chown -R nginx:nginx /app /etc/nginx
 
 EXPOSE  80 443
-CMD     ["nginx", "-g", "daemon off;"]
+CMD     ["nginx", "-g", "daemon off;", "-c", "nginx.$ENVIRONMENT.conf"]
