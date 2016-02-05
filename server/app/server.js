@@ -31,5 +31,6 @@ server.register({
   if (err) throw err;
   server.start(() => {
     server.log('info', `Server running at: ${server.info.uri}`);
+    server.log('info', `Environment: ${process.env.NODE_ENV}`)
   });
 });

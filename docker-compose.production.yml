@@ -6,10 +6,10 @@ server:
   ports:
     - "8000"
   environment:
-    - ENVIRONMENT=production
+    - NODE_ENV=production
 
 client:
   ports:
     - "80"
   environment:
-    - ENVIRONMENT=production
+    - NODE_ENV=production

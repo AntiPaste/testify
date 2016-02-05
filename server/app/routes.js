@@ -13,13 +13,16 @@ const pg = pgpModule({
   promiseLib: Promise,
 });
 
-const db = pg(config.database);
-const routes = {};
-
-db.connect().catch((error) => {
-  console.log('Failed to connect to database:', error);
-  process.exit();
+let db = null;
+config.database.then((details) => {
+  db = pg(details);
+  db.connect().catch((error) => {
+    console.log('Failed to connect to database:', error);
+    process.exit();
+  });
 });
+
+const routes = {};
 
 routes.index = (request, reply) => {
   reply(`Hello from ${os.hostname()}!`);

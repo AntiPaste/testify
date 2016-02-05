@@ -10,7 +10,7 @@ server:
   ports:
     - "8000:8000"
   environment:
-    - ENVIRONMENT=development
+    - NODE_ENV=development
 
 client:
   container_name: testify-client
@@ -21,4 +21,4 @@ client:
   volumes:
     - "./client/app:/app"
   environment:
-    - ENVIRONMENT=development
+    - NODE_ENV=development
