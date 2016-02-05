@@ -22,4 +22,4 @@ COPY    ./nginx/ /etc/nginx/
 RUN			chown -R nginx:nginx /app /etc/nginx
 
 EXPOSE  80 443
-CMD     ["nginx", "-g", "daemon off;", "-c", "nginx.$ENVIRONMENT.conf"]
+CMD     ["sh", "-c", 'nginx -g "daemon off;" -c "nginx.${ENVIRONMENT}.conf"']
