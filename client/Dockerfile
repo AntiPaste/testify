@@ -18,8 +18,9 @@ VOLUME  ["/var/log/nginx"]
 
 COPY    ./app/ /app
 COPY    ./nginx/ /etc/nginx/
+COPY		./supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 RUN			chown -R nginx:nginx /app /etc/nginx
 
 EXPOSE  80 443
-CMD     nginx -g "daemon off;" -c "/etc/nginx/nginx.${ENVIRONMENT}.conf"
+CMD     ["/usr/bin/supervisord"]
