@@ -1,0 +1,24 @@
+database:
+  container_name: testify-database
+  ports:
+    - "5432:5432"
+
+server:
+  container_name: testify-server
+  links:
+    - database:database
+  ports:
+    - "8000:8000"
+  environment:
+    - ENVIRONMENT=development
+
+client:
+  container_name: testify-client
+  links:
+    - server:server
+  ports:
+    - "8080:80"
+  volumes:
+    - "./client/app:/app"
+  environment:
+    - ENVIRONMENT=development

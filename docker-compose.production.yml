@@ -1,0 +1,15 @@
+database:
+  ports:
+    - "5432"
+
+server:
+  ports:
+    - "8000"
+  environment:
+    - ENVIRONMENT=production
+
+client:
+  ports:
+    - "80"
+  environment:
+    - ENVIRONMENT=production

@@ -1,0 +1,14 @@
+database:
+  build: ./database
+  image: testify-database
+  restart: always
+
+server:
+  build: ./server
+  image: testify-server
+  restart: always
+
+client:
+  build: ./client
+  image: testify-client
+  restart: always
