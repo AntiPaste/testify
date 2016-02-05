@@ -4,7 +4,7 @@ FROM    mhart/alpine-node:5.4.1
 WORKDIR /app
 
 # Install app dependencies
-COPY    package.json package.json
+COPY    ./app/package.json package.json
 RUN     npm install
 
 # Bundle app source
