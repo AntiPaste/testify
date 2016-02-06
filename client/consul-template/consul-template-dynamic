@@ -1,5 +1,5 @@
 #!/bin/sh
 
 if [ "$1" == "production" ]; then
-  consul-template -consul 172.17.0.1:8500 -template "/etc/nginx/conf.d/production.conf.ctmpl:/etc/nginx/conf.d/production.conf:/usr/bin/supervisorctl restart nginx" -retry 30s
+  consul-template -consul 172.17.0.1:8500 -template "/etc/nginx/conf.d/production.conf.ctmpl:/etc/nginx/conf.d/production.conf:nginx -c /etc/nginx/nginx.production.conf  -s reload" -retry 30s
 fi
