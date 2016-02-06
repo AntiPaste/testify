@@ -12,4 +12,4 @@ client:
   ports:
     - "80"
   environment:
-    - NODE_ENV=production
+    - ENVIRONMENT=production

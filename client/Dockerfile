@@ -18,6 +18,7 @@ VOLUME  ["/var/log/nginx"]
 
 COPY    ./app/ /app
 COPY    ./nginx/ /etc/nginx/
+COPY		./consul-template/consul-template-dynamic /usr/bin/consul-template-dynamic
 COPY		./supervisor/supervisord.conf /etc/supervisord.conf
 
 RUN			chown -R nginx:nginx /app /etc/nginx

@@ -21,4 +21,4 @@ client:
   volumes:
     - "./client/app:/app"
   environment:
-    - NODE_ENV=development
+    - ENVIRONMENT=development
