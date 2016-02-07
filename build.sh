@@ -3,7 +3,7 @@
 export DOCKER_HOST=172.17.0.1:2375
 BRANCH=$(echo $GIT_BRANCH | tr '/' '\n' | tail -n1)
 COMMIT=$(echo $GIT_COMMIT | cut -c1-7)
-POSTFIX="${BRANCH}#$COMMIT"
+POSTFIX="${BRANCH}.$COMMIT"
 
 # Build the client
 cd client
