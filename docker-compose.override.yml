@@ -1,9 +1,11 @@
 database:
+  build: ./database
   container_name: testify-database
   ports:
     - "5432:5432"
 
 server:
+  build: ./server
   container_name: testify-server
   links:
     - database:database
@@ -13,6 +15,7 @@ server:
     - NODE_ENV=development
 
 client:
+  build: ./client
   container_name: testify-client
   links:
     - server:server

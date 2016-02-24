@@ -1,11 +1,8 @@
 database:
-  image: testify-database
   restart: always
 
 server:
-  image: testify-server
   restart: always
 
 client:
-  image: testify-client
   restart: always

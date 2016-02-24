@@ -1,14 +1,17 @@
 database:
+  image: testify-database
   ports:
     - "5432"
 
 server:
+  image: testify-server
   ports:
     - "8000"
   environment:
     - NODE_ENV=production
 
 client:
+  image: testify-client
   ports:
     - "80"
   environment:
